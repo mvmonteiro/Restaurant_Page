@@ -20,9 +20,9 @@
 * Dinâmica de absolut imports.
 
 ## Screenshots
-![Screenshot da tela inicial do Studies-Controll](https://i.imgur.com/qDgqUqb.png)
-![Screenshot da tela inicial do Studies-Controll](https://i.imgur.com/diLQdK8.png)
-![Screenshot da tela inicial do Studies-Controll](https://i.imgur.com/O91YGE8.png)
+![Screenshot da tela inicial do Restaurant-Page](https://i.imgur.com/sTe1bAv.png)
+![Screenshot da tela inicial do Restaurant-Page](https://i.imgur.com/5BhOxuj.png)
+![Screenshot da tela inicial do Restaurant-Page](https://i.imgur.com/IMogec1.png)
 
 ## Deploy
-https://studies-controll.vercel.app
+https://restaurant-page-psi.vercel.app
