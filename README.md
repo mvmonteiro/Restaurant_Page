@@ -26,3 +26,14 @@
 
 ## Deploy
 https://studies-controll.vercel.app
+
+
+# Métodos que foram instalados:
+
+* classNames -> npm install classnames -> função para organizar classNames
+* SasS -> para ter o module.scss
+* react Icons -> para conseguir usar icones do react
+* react Components para imagens -> utilizar a imagem como um componente
+* import dinamico com a pasta public
+* normaliza -> resetar o css padrao
+* absolut import -> importar de uma forma absoluta

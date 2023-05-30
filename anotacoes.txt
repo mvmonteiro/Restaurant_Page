@@ -71,3 +71,32 @@
     - além disso tiramos o '/' do path do '/cardapio' -> o react router dom v6 funciona com path relativo
       - não precisa fazer o path absoluto -> ele está relativo ao elemento pai 
         - se o elemento pai estiver "path=/banana" -> o elemento filho pode colocar somente "path=asd" e irá utilizar o path /banana/asd
+        - Nested routes (nome disso)
+
+- Estilo tema
+  - vamos ter um estilo tema padrão que vamos criar
+    - tanto o container e o titulo vem dentro dele
+  - utilizando o react router dom para adicionar um tema padrão com o arquivo Tema.module.scss dentro de styles
+  - deixa o css dos outros arquivos mais enxuto
+
+- Finalização da tela Home
+  - coisa padrão
+
+- Tela de sobre
+  - adiciona ela no routes
+  - faz a tela em si -> nada de especial
+
+- Criando página não encontrada
+  - antes criamos o footer como um component -> adiciona ele no routes.js
+  - para a notFound fizemos um notFound.tsx dentro de Pages
+    - faz o html com o react normal -> utilizamos uma imagem SVG por isso ela fica como uma tag
+  - agora devemos adicionar essa página às rotas
+    - coloca um element='notFound'
+    - um path='*' -> isso vai dizer que pra todas as rotas que não forem iguais as que estão dentro do switch -> aparece o notFound
+    - agora temos uma página 404
+      - ela ainda está pegando o header! aquela imagem em baixo da navbar
+  - o react router tem um historico de navegação
+    - funciona como uma pilha
+    - quando queremos voltar da pra voltar para página anterior da pilha
+      - useNavigate() -> função de navegação de rotas
+      - quando utilizamos o navigate(-1) -> faz com que volte 1 página da pilha
