@@ -1,0 +1,73 @@
+- ESLint
+  - npm init @eslint/config
+    - ultima opção
+    - JS com import
+    - react
+    - sim
+    - browser
+    - nosso estilo
+    - .json
+    - tabs - simples - unix - yes - yes - npm
+  - npx eslint ./src --fix -> para arrumar todos arquivos sem ter que entrar
+    - dá um erro -> somos obrigado a importar o react ao utilizar o jsx -> nas versões mais atualizadas não precisamos, então colocamos uma regra
+      que permite isso -> "react/react-in-jsx-scope": "off",
+  - O ESLint é uma ferramenta que analisa o código e aponta quaisquer problemas que encontrar. Ele pode encontrar bugs, áreas potencialmente 
+    problemáticas, estilos de codificação ruins e questões de estilo.
+
+- Novas Rotas
+  - dentro da pasta page
+    - Nova pasta: Home
+  - Refatoração de código -> vamos utilizar um arquivo que teoricamente era pra ser somente do cardapio
+    - Nova pasta dentro src: data -> onde estarão os arquivos que vão ser compartilhados entre a aplicação
+
+- SPA
+  - não precisamos criar um html para cada página
+  - só tem um html e a partir dele o JS aplica as coisas necessárias nele
+  - através do createRoot, o react faz a inserção do html la dentro
+
+- Mudança de Rotas
+  - const componenteAtual = window.location.pathname === '/' ? <Home /> : <Cardapio />;
+  - ternário de componentização -> não é muito eficiente -> vai trocar depois
+    - muito verboso
+    - não resolve alguns do problemas
+    - existem pacotes que servem pra isso
+  - npm i react-router-dom
+  - novo arquivos em src: routes.js
+    - browserRouter -> permite acessa o window.location.pathname -> qualquer coisa que vem depois do /
+    - Routes -> funciona como um switch -> sempre para na primeira rota que ele encontra
+    - Route -> onde colocamos o path -> atributos path e element (elemento que vai ser renderizado)
+      - dentro de cada route coloca o elemento que queremos renderizar com o seu path
+  - tiramos a maneira antiga de reendiração para colocar a nova com o Router
+    - agora as rotas funcionam normalmente: home com o '/' e o cardapio no '/cardapio'
+
+- Reaproveitamento de código
+  - o menu aparece em todas as páginas
+  - nova pasta: components
+    - reaproveitamento de componentes em todas páginas: como o menu
+    - dentro vem a pasta Menu
+    - criamos o arquivo menu com suas tags ali dentro e o seu css
+    - ao invés de importar o compoente <Menu/> em cada rota -> vamos fazer um layout padrão para todas rotas
+  - Colocamos o novo componente <Menu /> dentro do routes.js (FORA DO "SWITCH") -> REACT ROUTER DOM
+    - assim o menu vai aparecer como layout em todas rotas
+    - reaproveitamento de código -> não tem uma nova reenderização -> o componente fica estático
+
+- Criação da navbar
+  - dentro do arquivo do menu
+    - estruturação da barra de navegação
+    - como utilizamos a tag "a" -> tem refresh -> de forma nativa o dom funciona assim -> toda a página é destruida e feita novamente
+    - não queremos esse refresh
+      - trocamos a tag "a" para "link"
+        - tira o refresh -> tudo acontece na mesma página -> a renderização acontece só com o que precisa
+
+- Reaproveitamento do header
+  - colocamos o header dentro do arquivo de rotas
+    - introduzimos um arquivo css para as rotas -> não é bom fazer isso, as rotas não devem ter css
+    - além disso, qualquer rota que colocamos aparece o header e a navbar -> tem que aparecer uma página de erro
+
+- Página padrão (com tudo certinho)
+  - utilização do children do React Router Dom -> Outlet -> dentro do layout
+  - dentro do routes.js é feita a lógica para utilizar o layout somente em determinadas páginas
+    - o route index significa que vai renderizar o que tiver no elemento pai, no caso o path '/'
+    - além disso tiramos o '/' do path do '/cardapio' -> o react router dom v6 funciona com path relativo
+      - não precisa fazer o path absoluto -> ele está relativo ao elemento pai 
+        - se o elemento pai estiver "path=/banana" -> o elemento filho pode colocar somente "path=asd" e irá utilizar o path /banana/asd
