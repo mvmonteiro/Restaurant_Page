@@ -25,4 +25,3 @@
 ![Screenshot da tela inicial do Restaurant-Page](https://i.imgur.com/IMogec1.png)
 
 ## Deploy
-https://restaurant-page-psi.vercel.app
