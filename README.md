@@ -20,20 +20,8 @@
 * Dinâmica de absolut imports.
 
 ## Screenshots
-![Screenshot da tela inicial do Studies-Controll](https://i.imgur.com/qDgqUqb.png)
-![Screenshot da tela inicial do Studies-Controll](https://i.imgur.com/diLQdK8.png)
-![Screenshot da tela inicial do Studies-Controll](https://i.imgur.com/O91YGE8.png)
+![Screenshot da tela inicial do Restaurant-Page](https://i.imgur.com/sTe1bAv.png)
+![Screenshot da tela inicial do Restaurant-Page](https://i.imgur.com/5BhOxuj.png)
+![Screenshot da tela inicial do Restaurant-Page](https://i.imgur.com/IMogec1.png)
 
 ## Deploy
-https://studies-controll.vercel.app
-
-
-# Métodos que foram instalados:
-
-* classNames -> npm install classnames -> função para organizar classNames
-* SasS -> para ter o module.scss
-* react Icons -> para conseguir usar icones do react
-* react Components para imagens -> utilizar a imagem como um componente
-* import dinamico com a pasta public
-* normaliza -> resetar o css padrao
-* absolut import -> importar de uma forma absoluta
