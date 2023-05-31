@@ -2,12 +2,20 @@ import cardapio from 'data/cardapio.json';
 import styles from './home.module.scss';
 import stylesTema from 'styles/Tema.module.scss';
 import nossaCasa from 'assets/images/nossa_casa.png';
+import { useNavigate } from 'react-router-dom';
+import { Prato } from 'types/Prato';
 
 export default function Home() {
 	// item com o array de cardapio -> aqui posso alterar sem fazer alteração no .json
 	let pratosRecomendados = [...cardapio];
 	// faz um sorte randomicos dos itens e pega os 3 primeiros itens
 	pratosRecomendados = pratosRecomendados.sort( () => 0.5 - Math.random()).splice(0, 3);
+
+	const navigate = useNavigate();
+
+	function redirecionarParaDetalhes(prato: Prato){
+		navigate(`/prato/${prato.id}`, { state: {prato} });
+	}
 
 	return (
 		<section>
@@ -20,7 +28,10 @@ export default function Home() {
 						<div className={styles.recomendado__imagem}>
 							<img src={item.photo} alt={item.title} />
 						</div>
-						<button className={styles.recomendado__botao}>
+						<button 
+							className={styles.recomendado__botao}
+							onClick={ () => redirecionarParaDetalhes(item)}
+						>
                         Ver mais
 						</button>
 					</div>
