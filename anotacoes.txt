@@ -100,3 +100,20 @@
     - quando queremos voltar da pra voltar para página anterior da pilha
       - useNavigate() -> função de navegação de rotas
       - quando utilizamos o navigate(-1) -> faz com que volte 1 página da pilha
+
+- Rota para cada prato
+  - adiciona o arquivo com a página dos pratos
+  - utilização do hook useParams
+    - essa função retorna o parâmetro utilizado na rota da URL atual
+  - useLocation()
+    - função que mostra diversas variáveis relacionadas à url
+    - dentro da Home fizemos um redirecionamento de navegação para a página: prato/idDoPrato
+    - junto com essa informação a função navigate() permite um segundo argumento -> o state
+      - nesse argumento colocamos todo o objeto que é aquele prato que foi clicado e enviamos como informação que pode ser acessado 
+        pelo useLocation
+      - assim conseguimos acesso ao estado que foi enviado
+    - replace: true -> faz que aconteça a navegação esquecendo a posição anterior -> ou seja, ele substitui o lugar da navegação anterior
+    - com todas as informações podemos montar a página de cada prato
+      - entretanto estamos fazendo a partir da home page -> dela sabemos que prato foi escolhido
+      - o usuário pode colocar na url direto o id do prato
+        - devemos usar useParams para saber de que prato estamos tratando
