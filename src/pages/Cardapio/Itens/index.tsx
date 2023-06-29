@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import Item from './Item';
 import menu from 'data/cardapio.json';
 import styles from './Itens.module.scss';
@@ -55,4 +55,4 @@ const Itens = ( { busca, filtro, ordenador }: Props ) => {
 	);
 };
 
-export default Itens;
+export default memo(Itens);

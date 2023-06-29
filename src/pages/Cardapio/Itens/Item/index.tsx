@@ -1,5 +1,6 @@
 import styles from './Item.module.scss';
 import TagsPrato from 'components/TagsPrato';
+import { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Prato } from 'types/Prato';
 
@@ -25,4 +26,4 @@ const Item = ( props: Prato ) => {
 	);
 };
 
-export default Item;
+export default memo(Item);

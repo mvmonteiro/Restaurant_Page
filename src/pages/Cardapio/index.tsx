@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import Buscador from './Buscador';
 import styles from './Cardapio.module.scss';
 import Filtros from './Filtros';
@@ -25,4 +25,4 @@ const Cardapio = () => {
 	);
 };
 
-export default Cardapio;
+export default memo(Cardapio);

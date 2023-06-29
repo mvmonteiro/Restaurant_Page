@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import styles from './Ordenador.module.scss';
 import opcoes from './opcoes.json';
 import classNames from 'classnames';
@@ -38,4 +38,4 @@ const Ordenador = ( { ordenador, setOrdenador }: Props ) => {
 	);
 };
 
-export default Ordenador;
+export default memo(Ordenador);
